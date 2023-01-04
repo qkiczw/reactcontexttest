@@ -1,6 +1,4 @@
-# reactcontexttest
-
-Just studying how CONTEXT API works
+# Just studying REACT CONTEXT API :)
 
 # Getting Started with Create React App
 
