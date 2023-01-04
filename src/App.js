@@ -1,4 +1,9 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Routes, Route, NavLink } from 'react-router-dom';
+
+// components
+import PageOne from './components/PageOne/PageOne';
+import PageTwo from './components/PageTwo/PageTwo';
+import MainPage from './components/MainPage/MainPage';
 
 import './App.css';
 
@@ -7,13 +12,17 @@ function App() {
     <div className="App">
       <header className="App-header">
         <nav>
-          Menu area 
+          <NavLink to="/">Main</NavLink>
+          <NavLink to="pageOne">PageOne</NavLink>
+          <NavLink to="pageTwo">PageTwo</NavLink>
         </nav>
       </header>
       <main>
-        <div>
-          <h1>CONTEXT API TEST FIELD</h1>
-        </div>
+        <Routes>
+          <Route exact path='/' element={<MainPage/>}/>
+          <Route path='pageOne' element={<PageOne/>}/>
+          <Route path='pagetwo' element={<PageTwo/>}/>
+        </Routes>
       </main>
     </div>
   );
