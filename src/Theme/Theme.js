@@ -8,6 +8,7 @@ export const themeLight = {
     },
     navigation: {
       color: "#263238",
+      textDecoration: "none",
     },
   },
 };
@@ -22,6 +23,7 @@ export const themeDark = {
     },
     navigation: {
       color: "#fff",
+      textDecoration: "none",
     },
   },
 };

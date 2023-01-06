@@ -8,7 +8,7 @@ import MainPage from "./components/MainPage/MainPage";
 import Footer from "./components/Footer/Footer";
 
 // Context API
-import { ThemeContext } from "./components/Context/ThemeContext";
+import { ThemeContext, UserContext } from "./components/Context/ThemeContext";
 
 // Utils
 import { themeLight, themeDark } from "./Theme/Theme";
@@ -32,7 +32,9 @@ function App() {
             <Route path="pagetwo" element={<PageTwo />} />
           </Routes>
         </main>
-        <Footer />
+        <UserContext.Provider value={"Lukasz"}>
+          <Footer />
+        </UserContext.Provider>
       </div>
     </ThemeContext.Provider>
   );

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { ThemeContext } from "../Context/ThemeContext";
+import { ThemeContext, UserContext } from "../Context/ThemeContext";
 
 const footerStyles = {
   width: "100%",
@@ -13,9 +13,11 @@ const footerStyles = {
 
 const Footer = () => {
   const theme = useContext(ThemeContext);
+  const user = useContext(UserContext);
+
   return (
     <footer style={{ ...footerStyles, ...theme.colors }}>
-      <p>React Context API - test field 2023</p>
+      <p>React Context API test - created by {user} - 2023</p>
     </footer>
   );
 };
