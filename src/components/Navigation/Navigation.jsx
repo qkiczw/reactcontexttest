@@ -1,25 +1,18 @@
-import React from "react";
-import { NavLink, redirect } from "react-router-dom";
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
 
-
-const navStyles = {
-    backgroundColor: "orange",
-    width: "100%",
-    display: "flex",
-    gap: "25px",
-    textDecoration: "none",
-    padding: "25px 10px",
-}
+import { ThemeContext } from "../Context/ThemeContext";
 
 const Navigation = () => {
-    return (
-        <nav style={navStyles}>
-          <NavLink to="/">Main</NavLink>
-          <NavLink to="pageOne">PageOne</NavLink>
-          <NavLink to="pageTwo">PageTwo</NavLink>
-        </nav>
-    )
+  const theme = useContext(ThemeContext);
 
-}
+  return (
+    <nav style={theme.light}>
+      <NavLink to="/">Main</NavLink>
+      <NavLink to="pageOne">PageOne</NavLink>
+      <NavLink to="pageTwo">PageTwo</NavLink>
+    </nav>
+  );
+};
 
 export default Navigation;
