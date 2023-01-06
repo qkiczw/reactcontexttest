@@ -26,6 +26,8 @@ function App() {
           <Navigation />
         </header>
         <main>
+          {/* Add a info and maybe star wars icon with 
+          darth Vader and Luke Skywalker depends which theme was detected */}
           <Routes>
             <Route exact path="/" element={<MainPage />} />
             <Route path="pageOne" element={<PageOne />} />
