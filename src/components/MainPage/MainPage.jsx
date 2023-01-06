@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../Context/ThemeContext";
 
 const MainPage = () => {
-    return (
-        <div>
-            <h1>START PAGE!!!</h1>
-        </div>
-    )
-}
+  const theme = useContext(ThemeContext);
+  return (
+    <div style={theme.colors.main}>
+      <h1>START PAGE!!!</h1>
+    </div>
+  );
+};
 
 export default MainPage;

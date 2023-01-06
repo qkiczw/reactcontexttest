@@ -7,10 +7,16 @@ const Navigation = () => {
   const theme = useContext(ThemeContext);
 
   return (
-    <nav style={theme.light}>
-      <NavLink to="/">Main</NavLink>
-      <NavLink to="pageOne">PageOne</NavLink>
-      <NavLink to="pageTwo">PageTwo</NavLink>
+    <nav style={theme.colors}>
+      <NavLink style={theme.colors.navigation} to="/">
+        Main
+      </NavLink>
+      <NavLink style={theme.colors.navigation} to="pageOne">
+        PageOne
+      </NavLink>
+      <NavLink style={theme.colors.navigation} to="pageTwo">
+        PageTwo
+      </NavLink>
     </nav>
   );
 };

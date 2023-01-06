@@ -5,18 +5,22 @@ import Navigation from "./components/Navigation/Navigation";
 import PageOne from "./components/PageOne/PageOne";
 import PageTwo from "./components/PageTwo/PageTwo";
 import MainPage from "./components/MainPage/MainPage";
+import Footer from "./components/Footer/Footer";
 
 // Context API
 import { ThemeContext } from "./components/Context/ThemeContext";
 
 // Utils
-import { Theme } from "./Theme/Theme";
+import { themeLight, themeDark } from "./Theme/Theme";
 
+// Default CSS
 import "./App.css";
+
+const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
 
 function App() {
   return (
-    <ThemeContext.Provider value={Theme}>
+    <ThemeContext.Provider value={darkThemeMq.matches ? themeDark : themeLight}>
       <div className="App">
         <header className="App-header">
           <Navigation />
@@ -28,6 +32,7 @@ function App() {
             <Route path="pagetwo" element={<PageTwo />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </ThemeContext.Provider>
   );
