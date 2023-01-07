@@ -1,4 +1,12 @@
 export const themeLight = {
+  default: {
+    padding: "20px 10px",
+    center: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+  },
   colors: {
     backgroundColor: "#fff",
     color: "#263238",
@@ -20,6 +28,15 @@ export const themeLight = {
 };
 
 export const themeDark = {
+  default: {
+    padding: "20px 10px",
+    center: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "25px",
+    },
+  },
   colors: {
     backgroundColor: "#37474f",
     color: "#fff",
