@@ -1,6 +1,7 @@
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // components
+import AppBackground from "./components/AppBackground/AppBackground";
 import Navigation from "./components/Navigation/Navigation";
 import PageOne from "./components/PageOne/PageOne";
 import PageTwo from "./components/PageTwo/PageTwo";
@@ -21,23 +22,25 @@ const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
 function App() {
   return (
     <ThemeContext.Provider value={darkThemeMq.matches ? themeDark : themeLight}>
-      <div className="App">
-        <header className="App-header">
-          <Navigation />
-        </header>
-        <main>
-          {/* Add a info and maybe star wars icon with 
+      <AppBackground>
+        <div className="app">
+          <header className="app-header">
+            <Navigation />
+          </header>
+          <main>
+            {/* Add a info and maybe star wars icon with 
           darth Vader and Luke Skywalker depends which theme was detected */}
-          <Routes>
-            <Route exact path="/" element={<MainPage />} />
-            <Route path="pageOne" element={<PageOne />} />
-            <Route path="pagetwo" element={<PageTwo />} />
-          </Routes>
-        </main>
-        <UserContext.Provider value={"Lukasz"}>
-          <Footer />
-        </UserContext.Provider>
-      </div>
+            <Routes>
+              <Route exact path="/" element={<MainPage />} />
+              <Route path="pageOne" element={<PageOne />} />
+              <Route path="pagetwo" element={<PageTwo />} />
+            </Routes>
+          </main>
+          <UserContext.Provider value={"Lukasz"}>
+            <Footer />
+          </UserContext.Provider>
+        </div>
+      </AppBackground>
     </ThemeContext.Provider>
   );
 }
