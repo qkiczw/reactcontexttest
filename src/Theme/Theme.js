@@ -9,6 +9,9 @@ export const themeLight = {
       backgroundColor: "#fff",
       color: "#607d8b",
     },
+    header: {
+      backgroundColor: "#455a64",
+    },
     navigation: {
       color: "#263238",
       textDecoration: "none",
@@ -18,15 +21,17 @@ export const themeLight = {
 
 export const themeDark = {
   colors: {
-    backgroundColor: "#263238",
+    backgroundColor: "#37474f",
     color: "#fff",
+    border: "1px solid #b0bec5",
     appBackground: {
-      backgroundColor: "red",
+      backgroundColor: "#263238",
     },
     main: {
       backgroundColor: "#607d8b",
       color: "#fff",
     },
+
     navigation: {
       color: "#fff",
       textDecoration: "none",

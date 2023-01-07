@@ -19,12 +19,24 @@ import "./App.css";
 
 const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
 
+const defaultStyles = {
+  width: "60%",
+  borderRadius: "1rem",
+};
+
 function App() {
   return (
     <ThemeContext.Provider value={darkThemeMq.matches ? themeDark : themeLight}>
       <AppBackground>
-        <div className="app">
-          <header className="app-header">
+        <div className="app" style={{ ...defaultStyles }}>
+          <header
+            className="app-header"
+            style={
+              darkThemeMq.matches
+                ? themeDark.colors.header
+                : themeLight.colors.header
+            }
+          >
             <Navigation />
           </header>
           <main>

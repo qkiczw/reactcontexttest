@@ -5,11 +5,13 @@ import { ThemeContext } from "../Context/ThemeContext";
 const styles = {
   width: "100%",
   height: "100vh",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 };
 
 const AppBackground = ({ children }) => {
   const themeStyles = useContext(ThemeContext);
-  console.log("???>", themeStyles.colors.appBackground);
   return (
     <div style={{ ...styles, ...themeStyles.colors.appBackground }}>
       {children}
