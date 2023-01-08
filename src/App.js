@@ -29,8 +29,6 @@ const defaultStyles = {
 function App() {
   const [darkMode, setDarkmode] = useState(darkThemeMq.matches);
 
-  console.log(`state: ${darkMode}`);
-
   return (
     <ThemeContext.Provider value={darkMode ? themeDark : themeLight}>
       <AppBackground>
