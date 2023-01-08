@@ -8,6 +8,7 @@ import PageOne from "./components/PageOne/PageOne";
 import PageTwo from "./components/PageTwo/PageTwo";
 import MainPage from "./components/MainPage/MainPage";
 import Footer from "./components/Footer/Footer";
+import ThemeSwitchButton from "./components/ThemeSwitchButton/ThemeSwitchButton";
 
 // Context API
 import { ThemeContext, UserContext } from "./components/Context/ThemeContext";
@@ -26,9 +27,9 @@ const defaultStyles = {
 };
 
 function App() {
-  const [darMode, setDarkmode] = useState(darkThemeMq.matches);
+  const [darkMode, setDarkmode] = useState(darkThemeMq.matches);
 
-  console.log(`state: ${darMode}`);
+  console.log(`state: ${darkMode}`);
 
   return (
     <ThemeContext.Provider value={darkThemeMq.matches ? themeDark : themeLight}>
@@ -62,6 +63,7 @@ function App() {
           <UserContext.Provider value={"Lukasz"}>
             <Footer />
           </UserContext.Provider>
+          <ThemeSwitchButton changeTheme={() => setDarkmode(!darkMode)} />
         </div>
       </AppBackground>
     </ThemeContext.Provider>
