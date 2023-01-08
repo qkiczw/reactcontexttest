@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // components
@@ -25,6 +26,10 @@ const defaultStyles = {
 };
 
 function App() {
+  const [darMode, setDarkmode] = useState(darkThemeMq.matches);
+
+  console.log(`state: ${darMode}`);
+
   return (
     <ThemeContext.Provider value={darkThemeMq.matches ? themeDark : themeLight}>
       <AppBackground>
