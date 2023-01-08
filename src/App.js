@@ -32,7 +32,7 @@ function App() {
   console.log(`state: ${darkMode}`);
 
   return (
-    <ThemeContext.Provider value={darkThemeMq.matches ? themeDark : themeLight}>
+    <ThemeContext.Provider value={darkMode ? themeDark : themeLight}>
       <AppBackground>
         <div className="app" style={{ ...defaultStyles }}>
           <header
@@ -52,9 +52,7 @@ function App() {
               <Route
                 exact
                 path="/"
-                element={
-                  <MainPage darkMode={darkThemeMq.matches ? true : false} />
-                }
+                element={<MainPage darkMode={darkMode} />}
               />
               <Route path="pageOne" element={<PageOne />} />
               <Route path="pagetwo" element={<PageTwo />} />
